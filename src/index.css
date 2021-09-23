@@ -1,13 +1,70 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;400;700&display=swap');
+
+:root {
+  --b_xs: screen and (max-width: 575px);
+  --b_sm: screen and (min-width: 576px);
+  --b_md: screen and (min-width: 768px);
+  --b_lg: screen and (min-width: 1024px);
+  --b_xl: screen and (min-width: 1176px);
+  --b_sm_max: screen and (max-width: 767px);
+  --b_md_max: screen and (max-width: 1023px);
+  --screen-xl: screen and (max-width: 1175px);
+
+  --container-width: 1200px;
+  --c_color_alpha: #0c71bf;
+  --c_color_alpha_dark: #0a4a7c;
+  --c_color_beta: #e50051;
+  --c_color_gamma: #3aaa35;
+  --c_light_alpha: #252525;
+  --c_light_beta: #dcdcdc;
+  --c_light_gamma: #f4f4f4;
+  --c_light_epsilon: #faf5e1;
+  --c_text: #000000;
+  --c_background: #ffffff;
+  --c_code: #252525;
+  --c_valid: #95c11f;
+  --c_warning: #e1741b;
+  --c_invalid: #d71d24;
+  --c_disruption: #ff5c1c;
+  --c-no__disruption: #179d4d;
+  --c_external_travel: #58358a;
+  --color-black: #000000;
+  --color-dark-blue: dodgerblue;
+  --color-light-blue: lightblue;
+  --color-dark-grey: #999999;
+  --color-grey: #ccc;
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f1f2f3;
+  --color-neutral-300: #d8dadc;
+  --color-neutral-400: #c0c2c6;
+  --color-neutral-500: #73777d;
+  --color-neutral-600: #4c5157;
+  --color-neutral-700: #20252c;
+  --color-neutral-800: #000000;
+  --color-primary-100: #f3f8fc;
+  --color-primary-200: #afdff9;
+  --color-primary-300: #7ab4ff;
+  --color-primary-400: #2870f0;
+  --color-primary-500: #0a47c2;
+  --color-highlight-light: #f5cf39;
+  --color-success-light: #197e50;
+  --color-warning-light: #d07432;
+  --color-error-light: #ce3333;
+  --color-highlight-dark: #f7dd5f;
+  --color-success-dark: #1d9f64;
+}
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-neutral-700);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
