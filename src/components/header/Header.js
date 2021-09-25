@@ -1,6 +1,12 @@
 import React from 'react'
+import Nav from './Nav'
+
 const Header = () => {
-  return <div>{/* <a href='#'>{'<-- '}Tillbaka</a> */}</div>
+  return (
+    <div>
+      <Nav />
+    </div>
+  )
 }
 
 export default Header

@@ -1,11 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+export const Buttons = styled.div`
+  background-color: rgba(76, 81, 87, 1);
+  padding: 12px 233px 16px 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+`
 
 const TicketCard = ({ myTickets }) => {
   return (
     <div>
       <h1>Dina biljetter</h1>
       {myTickets.map((ticket, i) => (
-        <div key={i}>
+        <div style={{ backgroundColor: 'green' }} key={i}>
           <hr />
           <h2>{ticket.timeLeft}</h2>
           <p>
@@ -13,14 +23,19 @@ const TicketCard = ({ myTickets }) => {
           </p>
           {ticket.discounted && <p>En rabatterad</p>}
 
-          <div>
-            <button onClick={() => alert('Du ska få se din biljett Yaoo!')}>
-              Reservera cykel
-            </button>
-            <button onClick={() => alert('Du ska få se din biljett Yaoo!')}>
-              Visa biljett
-            </button>
-          </div>
+          <Buttons>
+            <Link to='/findBike'>
+              {' '}
+              <button onClick={() => console.log('Cykel knappen klickad.')}>
+                Cykel
+              </button>
+            </Link>
+            <Link to='/ticket'>
+              <button onClick={() => console.log('Biljett knappen klickad.')}>
+                Visa biljett
+              </button>
+            </Link>
+          </Buttons>
           <hr />
         </div>
       ))}

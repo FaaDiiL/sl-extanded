@@ -1,9 +1,12 @@
 import React from 'react'
 import TicketCard from './TicketCard'
+import Ticket from './Ticket'
 import PickBike from './PickBike'
 import TicketMenu from './TicketMenu'
+import { Switch, Route } from 'react-router-dom'
+import Header from '../header/Header'
 
-function Content({ number }) {
+function Content() {
   const myTickets = [
     { timeLeft: '01:14:31', ticketType: 'Enkelbiljett SL', discounted: true },
   ]
@@ -15,8 +18,22 @@ function Content({ number }) {
 
   return (
     <div>
-      <TicketCard myTickets={myTickets} />
-      <TicketMenu buyTickets={buyTickets} />
+      <Switch>
+        <Route exact path='/'>
+          <div className='Home'>
+            <TicketCard myTickets={myTickets} />
+            <TicketMenu buyTickets={buyTickets} />
+          </div>
+        </Route>
+        <Route exact path='/findBike'>
+          <Header />
+          <PickBike />
+        </Route>
+        <Route exact path='/ticket'>
+          <Header />
+          <Ticket />
+        </Route>
+      </Switch>
     </div>
   )
 }

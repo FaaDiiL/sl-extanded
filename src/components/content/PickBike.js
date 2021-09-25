@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import mapImg from '../../assets/img/map.png'
+
 const PickBike = () => {
   return (
     <div>
       <h1>Choose Bike!</h1>
-
       <div>
         <img src={mapImg} alt='A map' />
       </div>
