@@ -110,6 +110,64 @@ h3 {
 .hantera-biljett-subheader {
   width: 360px;
 }
-.biljett-typ-dubbel {
-  /* display: flex; */
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.space-between img,
+.space-between h3 {
+  padding-right: 14px;
+}
+.space-between img {
+  height: 28px;
+  margin-top: 18px;
+}
+
+#hantera-biljetter h3 {
+  margin-left: -10px;
+}
+#hantera-biljetter .blue-line {
+  margin-top: 20px;
+  width: 146px;
+}
+#kop-biljetter {
+  margin-top: 30px;
+}
+header img {
+  line-height: 15px;
+}
+footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-evenly;
+}
+footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  margin: 10px;
+  font-size: 18px;
+}
+.active {
+  color: #80b3f5;
+}
+footer img {
+  width: 35px;
+  height: 35px;
+}
+
+footer p {
+  letter-spacing: 1px;
+  margin-top: -2px;
+  font-size: 20px;
+}
+.logga-in {
+  color: #c1c2c7;
+  font-size: 1.9em;
+  margin-top: 18px;
+  font-family: slRegular;
+  margin-right: 15px;
 }
