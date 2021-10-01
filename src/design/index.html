@@ -1,74 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
-     <link rel="stylesheet" href="style.css">
-</head>
-<body >
-     <div class=wrapper>
-          
-          <header><img src='./img/Arrow-left.svg' alt='left arrow' /></header>
-          <section id='dina-biljetter'>
-               <div class='blue-line '></div>
-               <h2>Dina biljetter</h2>
-               <div class='ticket-holder'>
-                    <p>Du har inga biljetter på den här telefonen.</p>
-               </div>
-          </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <img
+          style="display: none"
+          src="./img/Arrow-left.svg"
+          alt="left arrow"
+        />
+      </header>
 
-          <section id='kop-biljetter'>
-               <div class='blue-line '></div>
-               <h2 class='biljett-typ-header'>Köp ny biljett</h2>
-               <div class='biljett-typ'>
-                    <h3>Enkelbiljett</h3>
-                    <p>Obegränsat antal resor inom 75 minuter</p>
-               </div>
-               <div class='biljett-typ'>
-                    <h3>30-dagarsbiljett</h3>
-                    <p>För dig som reser regelbundet</p>
-               </div>
-               <div class='biljett-typ'>
-                    <h3>Övriga biljetter</h3>
-                    <p>Se hela biljettutbudet</p>
-               </div>
-          </section>
+      <section id="dina-biljetter">
+        <div class="blue-line"></div>
+        <h2>Dina biljetter</h2>
+        <div class="ticket-holder">
+          <p style='display:none;'>Du har inga biljetter</p>
+          <div style='' class='bought-ticket-area'>
+            <div class='ticket-info'>
+              <h2>01:14:31</h2>
+              <h3>Enkelbiljett SL</h3>
+              <p>1 rabatterad</p>
+            </div>
+            <div class='ticket-links'>
+              <button class='bike-link' href='!#'>Reservera cykel</button>
+              <button class='ticket-links-show_btn' href='!#'>Visa biljett <img src='./img/Qr@2x.svg' alt='Qr-symbol'></button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <section id='hantera-biljetter'>
-               <div class='blue-line'></div>
-               <h2 class='biljett-typ-header'>Hantera Biljetter</h2>
-               <div class='biljett-typ hantera-biljett-subheader'>
-                    <h3>Köphistorik och kvitton</h3>
-               </div>
-               <div class='space-between biljett-typ hantera-biljett-subheader'>
-                    <h3>Lägg till nytt betalkort</h3>
-                    <img src='./img/Add@2x.svg' alt='plus' />
-               </div>
-               <div class='space-between biljett-typ hantera-biljett-subheader'>
-                    <h3>Förlustgaranti</h3>
-                    <span class='logga-in'>Logga in för att aktivera</span>
-               </div>
-               <div class='biljett-typ hantera-biljett-subheader'>
-                    <h3>Återskapa appbiljetter</h3>
-               </div>
-          </section>
-          <footer>
-               <div>
-                    <img src='./img/Journey@2x.svg' alt='Journey' />
-                    <p>Resa</p>
-               </div>
-               <div>
-                    <img src='./img/Ticket@2x.svg' alt='Ticket' />
-                    <p class='active'>Biljetter</p>
-               </div>
-               <div>
-                    <img src='./img/More-1.svg' alt='More...' />
-                    <p>Mer</p>
-               </div>
-          </footer>
+      <section id="kop-biljetter">
+        <div class="blue-line"></div>
+        <h2 class="biljett-typ-header">Köp ny biljett</h2>
+        <div class="biljett-typ">
+          <h3>Enkelbiljett</h3>
+          <p>Obegränsat antal resor inom 75 minuter</p>
+        </div>
+        <div class="biljett-typ">
+          <h3>30-dagarsbiljett</h3>
+          <p>För dig som reser regelbundet</p>
+        </div>
+        <div class="biljett-typ">
+          <h3>Övriga biljetter</h3>
+          <p>Se hela biljettutbudet</p>
+        </div>
+      </section>
 
-     </div>
-</body>
+      <section id="hantera-biljetter">
+        <div class="blue-line"></div>
+        <h2 class="biljett-typ-header">Hantera Biljetter</h2>
+        <div class="biljett-typ hantera-biljett-subheader">
+          <h3>Köphistorik och kvitton</h3>
+        </div>
+        <div class="space-between biljett-typ hantera-biljett-subheader">
+          <h3>Lägg till nytt betalkort</h3>
+          <img src="./img/Add@2x.svg" alt="plus" />
+        </div>
+        <div class="space-between biljett-typ hantera-biljett-subheader">
+          <h3>Förlustgaranti</h3>
+          <span class="logga-in">Logga in för att aktivera</span>
+        </div>
+        <div class="biljett-typ hantera-biljett-subheader">
+          <h3>Återskapa appbiljetter</h3>
+        </div>
+      </section>
+      <footer>
+        <div>
+          <img src="./img/Journey@2x.svg" alt="Journey" />
+          <p>Resa</p>
+        </div>
+        <div>
+          <img src="./img/Ticket@2x.svg" alt="Ticket" />
+          <p class="active">Biljetter</p>
+        </div>
+        <div>
+          <img src="./img/More-1.svg" alt="More..." />
+          <p>Mer</p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

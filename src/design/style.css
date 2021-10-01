@@ -1,3 +1,28 @@
+/* Scroll Style Settings - Start */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2a70ef;
+}
+/* Scroll Style Settings - End */
+
+/* Font Style Settings - Start */
 @font-face {
   font-family: 'slRegular';
   src: url('slRegular.woff2') format('woff2');
@@ -10,6 +35,8 @@
   font-family: 'slCool';
   src: url('slCool.woff2') format('woff2');
 }
+/* Font Style Settings - End */
+
 body {
   font-size: 62.5%;
   margin: 0;
@@ -27,15 +54,19 @@ h2 {
 }
 h3 {
   font-size: 1.8em;
+  font-family: 'slBold';
 }
 h4 {
   font-size: 1.6em;
+  font-family: 'slBold';
 }
 h5 {
   font-size: 1.2em;
+  font-family: 'slBold';
 }
 h6 {
   font-size: 1em;
+  font-family: 'slBold';
 }
 p {
   font-family: 'slRegular';
@@ -44,10 +75,100 @@ p {
 .wrapper {
   margin: 0 auto;
   margin-top: 50px;
-  width: 375px;
+  width: 390px;
   height: 812px;
   background-color: #20252b;
   color: #fff;
+  overflow-y: scroll;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.1em solid #c1c2c7;
+}
+.header-back {
+  display: flex;
+  justify-content: flex-start;
+}
+.confirm {
+  font-family: 'slBold';
+  color: white;
+  font-size: 1.8em;
+}
+
+.cancel {
+  color: white;
+  font-size: 1.8em;
+}
+
+.buy-header {
+  font-family: 'slRegular';
+  font-size: 1.6em;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 0.1em solid #c1c2c7;
+  padding-bottom: 20px;
+  margin-bottom: -2px;
+}
+
+.buy-ticket-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  border-bottom: 0.1em solid #c1c2c7;
+  padding: 0 5px;
+  /* padding-bottom: 5px; */
+}
+.buy-ticket-row p {
+  font-family: 'slBold';
+  color: white;
+  font-size: 1.4em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.buy-ticket-rowgroup {
+  display: flex;
+  align-items: center;
+}
+
+.buy-ticket-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.btn {
+  font-family: slRegular;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: #2a70ef;
+  color: white;
+  border: none;
+  font: slRegular;
+  cursor: pointer;
+  outline: inherit;
+}
+.btn-disabled {
+  font-family: slBold;
+  background-color: #4c5157;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  font: slRegular;
+  cursor: pointer;
+  outline: inherit;
+}
+.buy-btn-size {
+  width: 95%;
+  padding: 10px;
 }
 .slCool {
   font-family: 'slCool';
@@ -75,7 +196,7 @@ p {
   align-content: center;
   justify-content: center;
   background-color: #12151a;
-  height: 72px;
+  min-height: 72px;
   width: 371px;
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -87,6 +208,7 @@ p {
   font-family: slBold;
   margin: 0 auto;
   margin-top: -5px;
+  margin-left: 5px;
   line-height: 42px;
   width: 371px;
   border-bottom: 1px solid #c1c2c7;
@@ -123,9 +245,77 @@ h3 {
   height: 28px;
   margin-top: 18px;
 }
+header img {
+  line-height: 15px;
+}
+.bought-ticket-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 21.6em;
+  background-color: #197e50;
+  width: 35em;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+.ticket-info > h2 {
+  font-size: 4.8em;
+  margin-top: 40px;
+  margin-left: 15px;
+  line-height: 0px;
+}
+.ticket-info > h3 {
+  margin-left: 5px;
+  font-size: 1.6em;
+  margin-top: 35px;
+  line-height: 0px;
+}
+.ticket-info > p {
+  margin-left: 15px;
+  font-size: 1.3em;
+  margin-top: 20px;
+  line-height: 0px;
+  color: white;
+  font-family: 'slRegular';
+}
 
+.ticket-info {
+  font-family: slRegular;
+}
+.ticket-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.ticket-links-show_btn {
+  display: flex;
+  align-items: center;
+  font-family: slBold;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+.bike-link {
+  font-family: slBold;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+.ticket-links-show_btn > img {
+  padding-left: 10px;
+  height: 15px;
+}
 #hantera-biljetter h3 {
-  margin-left: -10px;
+  /* margin-left: -10px; */
 }
 #hantera-biljetter .blue-line {
   margin-top: 20px;
@@ -134,25 +324,29 @@ h3 {
 #kop-biljetter {
   margin-top: 30px;
 }
-header img {
-  line-height: 15px;
+.active {
+  color: #80b3f5;
+}
+.logga-in {
+  color: #c1c2c7;
+  font-size: 1.9em;
+  margin-top: 18px;
+  font-family: slRegular;
+  margin-right: 15px;
 }
 footer {
-  margin-top: 12px;
   display: flex;
   justify-content: space-evenly;
+  height: 35px;
 }
 footer > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 45px;
+  /* height: 45px; */
   width: 45px;
   margin: 10px;
   font-size: 18px;
-}
-.active {
-  color: #80b3f5;
 }
 footer img {
   width: 35px;
@@ -164,10 +358,25 @@ footer p {
   margin-top: -2px;
   font-size: 20px;
 }
-.logga-in {
-  color: #c1c2c7;
-  font-size: 1.9em;
-  margin-top: 18px;
-  font-family: slRegular;
-  margin-right: 15px;
+
+/* Buy Ticket Screen Styling - Start */
+.footer-margin {
+  margin-top: 398px;
 }
+/* Buy Ticket Screen Styling - End */
+
+/* Map Styling - Start */
+.footer-map-margin {
+}
+.map-header {
+  height: 5vh;
+}
+.map-container {
+  background-image: url(./img/Map.png);
+  height: 44.5vh;
+}
+.bike-info {
+  height: 22vh;
+  background-color: #4c5157;
+}
+/* Map Styling - End */
