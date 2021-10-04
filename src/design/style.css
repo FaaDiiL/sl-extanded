@@ -369,14 +369,53 @@ footer p {
 .footer-map-margin {
 }
 .map-header {
-  height: 5vh;
+  height: 5%;
 }
 .map-container {
   background-image: url(./img/Map.png);
-  height: 44.5vh;
+  height: 70%;
 }
 .bike-info {
-  height: 22vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 16%;
+  margin-top: 0px;
   background-color: #4c5157;
 }
+
+.bike-info-header {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 45px;
+  margin-top: -27px;
+}
+.bike-info-header img {
+  width: 30px;
+}
+
+.bike-info-msg {
+  background: #73777d;
+  border-radius: 5px;
+  margin: 0 40px;
+  padding: 0 50px;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.bIM-header {
+  line-height: 30px;
+}
+.bIM-body {
+  padding-bottom: 15px;
+}
+.bike-info-msg span {
+  color: white;
+  font-size: 16px;
+  font-family: slRegular;
+  letter-spacing: 1px;
+}
+
 /* Map Styling - End */
