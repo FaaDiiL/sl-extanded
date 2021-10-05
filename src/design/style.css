@@ -140,9 +140,13 @@ header {
   margin-top: 20px;
 }
 .btn {
+  margin: 0 auto;
+  margin-top: -5px;
+  width: 95%;
   font-family: slRegular;
+  font-size: 1.2rem;
   letter-spacing: 0.1em;
-  padding: 4px 10px;
+  padding: 14px 10px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -151,7 +155,6 @@ header {
   background: #2a70ef;
   color: white;
   border: none;
-  font: slRegular;
   cursor: pointer;
   outline: inherit;
 }
