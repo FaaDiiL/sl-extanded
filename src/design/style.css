@@ -37,6 +37,13 @@
 }
 /* Font Style Settings - End */
 
+.bold {
+  font-family: 'slBold';
+  font-weight: 800;
+}
+.regular {
+  font-family: 'slRegular';
+}
 body {
   font-size: 62.5%;
   margin: 0;
@@ -422,3 +429,70 @@ footer p {
 }
 
 /* Map Styling - End */
+
+/* Bike-Active.html - Start */
+
+.header-container {
+  justify-content: flex-start;
+}
+.header-container span {
+  display: flex;
+  align-items: center;
+  font-size: 1.6em;
+  letter-spacing: 0.03rem;
+}
+.danger {
+  background: #cd0b0b;
+  color: white;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  background: #73777d;
+}
+#first {
+  margin: 0 80px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.4rem;
+  letter-spacing: 0.05rem;
+}
+#first img {
+  width: 1.9rem;
+}
+
+#last {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+#last button {
+  font-size: 1.4rem;
+  letter-spacing: 0.05rem;
+}
+.time-container {
+  display: flex;
+}
+.green-card-container {
+  flex: 1;
+  margin: 20% 2%;
+  height: 200px;
+  background: #197e50;
+  display: flex;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.green-card-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+/* Bike-Active.html - End */
