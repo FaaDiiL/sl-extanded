@@ -1,0 +1,26 @@
+.biljett-typ-header {
+  font-family: slBold;
+  margin: 0 auto;
+  margin-top: -5px;
+  margin-left: 5px;
+  line-height: 42px;
+  width: 371px;
+  border-bottom: 1px solid #c1c2c7;
+}
+
+.biljett-typ {
+  font-family: slBold;
+  margin: 0 auto;
+  margin-top: -5px;
+  width: 371px;
+  border-bottom: 1px solid #c1c2c7;
+  color: #f2f2f4;
+}
+.biljett-typ p,
+h3 {
+  padding-left: 10px;
+}
+.biljett-typ p {
+  font-family: slRegular;
+  margin-top: -13px;
+}

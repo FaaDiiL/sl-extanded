@@ -1,0 +1,89 @@
+.blue-line {
+  margin-bottom: 5px;
+  margin-left: 3px;
+  border-bottom: 5px solid #2a70ef;
+  width: 113px;
+  height: 0.5em;
+}
+.ticket-holder {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  background-color: #12151a;
+  min-height: 72px;
+  width: 371px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.bought-ticket-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 21.6em;
+  background-color: #197e50;
+  width: 35em;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.ticket-info {
+  font-family: slRegular;
+}
+.ticket-info > h2 {
+  font-size: 4.8em;
+  margin-top: 40px;
+  margin-left: 15px;
+  line-height: 0px;
+}
+.ticket-info > h3 {
+  margin-left: 5px;
+  font-size: 1.6em;
+  margin-top: 35px;
+  line-height: 0px;
+}
+.ticket-info > p {
+  margin-left: 15px;
+  font-size: 1.3em;
+  margin-top: 20px;
+  line-height: 0px;
+  color: white;
+  font-family: 'slRegular';
+}
+
+.ticket-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.ticket-links-show_btn {
+  display: flex;
+  align-items: center;
+  font-family: slBold;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+.ticket-links-show_btn > img {
+  padding-left: 10px;
+  height: 15px;
+}
+.bike-link {
+  font-family: slBold;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}

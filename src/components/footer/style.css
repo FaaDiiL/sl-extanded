@@ -1,0 +1,29 @@
+footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45px;
+  margin: auto;
+  font-size: 18px;
+}
+footer img {
+  width: 35px;
+  height: 35px;
+}
+
+footer p {
+  letter-spacing: 1px;
+  margin-top: -2px;
+  font-size: 20px;
+}
+.footer-margin {
+  margin-top: 398px;
+}
+
+.active {
+  color: #80b3f5;
+}
