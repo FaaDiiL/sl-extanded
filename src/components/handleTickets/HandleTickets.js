@@ -6,7 +6,7 @@ const HandleTickets = () => {
   return (
     <section id='hantera-biljetter'>
       <div className='' />
-      <h2 className='top biljett-typ-header'>Hantera Biljetter</h2>
+      <h2 className='top biljett-typ-header bottom'>Hantera Biljetter</h2>
       <div className='biljett-typ hantera-biljett-subheader'>
         <h3>Köphistorik och kvitton</h3>
       </div>

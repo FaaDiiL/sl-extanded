@@ -9,17 +9,19 @@ const Ticket = ({ setIsEmpty }) => {
   })
   const buyTicket = (type) => {
     switch (type) {
-      case 'singel':
+      case 'single':
         setTicketTime({ hours: 1, minutes: 15, seconds: 0 })
+        setIsEmpty(false)
         break
       case 'month':
         setTicketTime({ hours: 1, minutes: 15, seconds: 0 })
+        setIsEmpty(false)
         break
 
       default:
+        console.log('Write "single" or "Month" in the buyTicket function.')
         break
     }
-    setTicketTime({ hours, minutes, seconds })
   }
 
   const { hours, minutes, seconds } = ticketTime
@@ -45,7 +47,6 @@ const Ticket = ({ setIsEmpty }) => {
           seconds: seconds + 59,
         })
       } else if (seconds > 0) {
-        console.log(seconds)
         setTicketTime({ ...ticketTime, seconds: seconds - 1 })
       } else if ((seconds === 0) & (minutes === 0) & (hours === 0)) {
         setIsEmpty(true)
