@@ -4,8 +4,8 @@ import './style.css'
 const Ticket = ({ setIsEmpty }) => {
   const [ticketTime, setTicketTime] = useState({
     hours: 1,
-    minutes: 0,
-    seconds: 3,
+    minutes: 15,
+    seconds: 0,
   })
   const buyTicket = (type) => {
     switch (type) {
@@ -53,7 +53,7 @@ const Ticket = ({ setIsEmpty }) => {
       }
     }, 1000)
     return () => clearInterval(interval)
-  }, [])
+  }, [ticketTime])
 
   return (
     <div className='bought-ticket-area'>
