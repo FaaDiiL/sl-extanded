@@ -1,6 +1,12 @@
 footer {
   display: flex;
   justify-content: space-evenly;
+  background: #20242c;
+  position: fixed;
+  width: 375px;
+  top: 792px;
+  height: 70px;
+  padding-top: 7px;
 }
 footer > div {
   display: flex;

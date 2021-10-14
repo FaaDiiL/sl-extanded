@@ -1,0 +1,20 @@
+.logga-in {
+  color: #c1c2c7;
+  font-size: 1.9em;
+  margin-top: 18px;
+  font-family: slRegular;
+  margin-right: 15px;
+}
+.top {
+  border-top: 5px solid #2a70ef;
+  display: inline;
+  height: 0.5em;
+}
+
+.inline-element {
+  display: inline;
+}
+
+#hantera-biljetter {
+  margin-bottom: 75px;
+}

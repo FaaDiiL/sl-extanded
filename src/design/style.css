@@ -337,13 +337,7 @@ header img {
 .active {
   color: #80b3f5;
 }
-.logga-in {
-  color: #c1c2c7;
-  font-size: 1.9em;
-  margin-top: 18px;
-  font-family: slRegular;
-  margin-right: 15px;
-}
+
 footer {
   display: flex;
   justify-content: space-evenly;

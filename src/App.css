@@ -1,4 +1,6 @@
 .wrapper {
+  position: relative;
+  height: 812px;
   margin: 0 auto;
   margin-top: 50px;
   width: 390px;
@@ -6,4 +8,17 @@
   background-color: #20252b;
   color: #fff;
   overflow-y: scroll;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.space-between {
+  justify-content: space-between;
 }

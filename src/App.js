@@ -10,17 +10,17 @@ import Header from './components/header/Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
-import YourTickets from './components/yourTickets/YourTickets'
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path='/'>
-          <div className='wrapper'>
+          <div className='wrapper flex-column space-between'>
             <Home />
             <Footer />
           </div>
         </Route>
+
         <Route path='/about'>
           <div className='wrapper'>
             <Header />
