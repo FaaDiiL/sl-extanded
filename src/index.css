@@ -80,19 +80,20 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
+  box-shadow: inset 0 0 0px #20252b;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: grey;
+  box-shadow: inset 0 0 5px #20252b;
+
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a70ef;
+  background: #2a6fef2a;
 }
 
 /* Scroll Style Settings - End */
