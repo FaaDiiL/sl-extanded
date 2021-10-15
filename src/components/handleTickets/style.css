@@ -5,10 +5,25 @@
   font-family: slRegular;
   margin-right: 15px;
 }
+.sub-header {
+  font-family: slBold;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-left: 0px;
+  line-height: 32px;
+  width: 371px;
+  border-bottom: 1px solid #c1c2c7;
+}
 .top {
   border-top: 5px solid #2a70ef;
   display: inline;
-  height: 0.5em;
+  line-height: 2em;
+  padding-top: 4px;
+  margin-bottom: 10px;
+}
+
+.bottom {
+  height: 2em;
 }
 
 .inline-element {
@@ -16,5 +31,6 @@
 }
 
 #hantera-biljetter {
+  margin-top: 13px;
   margin-bottom: 75px;
 }

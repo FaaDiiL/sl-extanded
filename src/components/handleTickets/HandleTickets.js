@@ -5,11 +5,14 @@ import './style.css'
 const HandleTickets = () => {
   return (
     <section id='hantera-biljetter'>
-      <div className='' />
-      <h2 className='top biljett-typ-header bottom'>Hantera Biljetter</h2>
+      <div className='sub-header-container sub-header'>
+        <h2 className='top '>Hantera Biljetter</h2>
+      </div>
+
       <div className='biljett-typ hantera-biljett-subheader'>
         <h3>Köphistorik och kvitton</h3>
       </div>
+
       <div className='flex-row biljett-typ hantera-biljett-subheader space-between'>
         <h3>Lägg till nytt betalkort</h3>
         <img src={add} alt='plus' />

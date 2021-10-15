@@ -1,15 +1,16 @@
 import React from 'react'
 import './style.css'
-const BuyNewTicket = () => {
+const BuyNewTicket = ({ buyTicket }) => {
   return (
     <section id='kop-biljetter'>
-      <div className='blue-line' />
-      <h2 className='biljett-typ-header'>Köp ny biljett</h2>
-      <div className='biljett-typ'>
+      <div className='sub-header-container sub-header'>
+        <h2 className='top '>Köp ny biljett</h2>
+      </div>
+      <div className='biljett-typ' onClick={(e) => buyTicket('single')}>
         <h3>Enkelbiljett</h3>
         <p>Obegränsat antal resor inom 75 minuter</p>
       </div>
-      <div className='biljett-typ'>
+      <div className='biljett-typ' onClick={(e) => buyTicket('month')}>
         <h3>30-dagarsbiljett</h3>
         <p>För dig som reser regelbundet</p>
       </div>

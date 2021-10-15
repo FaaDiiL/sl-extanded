@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './style.css'
 import Ticket from '../ticket/Ticket'
-const YourTickets = () => {
-  const [isEmpty, setIsEmpty] = useState(false)
-
+const YourTickets = ({ ticketTime, setTicketTime, isEmpty, setIsEmpty }) => {
   return (
     <section id='dina-biljetter'>
       <div id='margin-reset' className='blue-line' />
@@ -18,7 +16,13 @@ const YourTickets = () => {
         {/* 
             // todo Add the Bought tickets.....
         */}
-        {!isEmpty && <Ticket setIsEmpty={setIsEmpty} />}
+        {!isEmpty && (
+          <Ticket
+            setIsEmpty={setIsEmpty}
+            ticketTime={ticketTime}
+            setTicketTime={setTicketTime}
+          />
+        )}
       </div>
     </section>
   )

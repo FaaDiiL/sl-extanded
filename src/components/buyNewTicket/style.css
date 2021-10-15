@@ -7,7 +7,6 @@
   width: 371px;
   border-bottom: 1px solid #c1c2c7;
 }
-
 .biljett-typ {
   font-family: slBold;
   margin: 0 auto;
@@ -23,4 +22,8 @@ h3 {
 .biljett-typ p {
   font-family: slRegular;
   margin-top: -13px;
+}
+#kop-biljetter {
+  margin-top: 13px;
+  margin-bottom: 0px;
 }
