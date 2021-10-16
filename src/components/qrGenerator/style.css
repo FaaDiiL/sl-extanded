@@ -1,0 +1,51 @@
+.qr-wrapper {
+  position: absolute;
+  z-index: 9999;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  /* background: #fff; */
+  color: #000;
+  background: rgb(255, 255, 255);
+}
+.qr-wrapper h2 {
+  font-size: 4.8em;
+  margin-bottom: -12px;
+  text-align: center;
+}
+.modal {
+  margin: auto;
+}
+.modal-img-container p {
+  color: black;
+  text-align: center;
+}
+.img {
+  width: 300px;
+}
+.model-content p {
+  color: black;
+  text-align: center;
+}
+.model-content {
+  margin-top: -35px;
+}
+.slBold {
+  font-family: slBold;
+}
+.close {
+  font-size: 2em;
+  text-align: right;
+}
+.close:hover {
+  font-size: 2em;
+  color: red;
+  text-align: right;
+  cursor: pointer;
+  font-family: slBold;
+}

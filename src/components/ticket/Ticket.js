@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import qr from '../../assets/img/Qr@2x.svg'
 import './style.css'
-const Ticket = ({ setIsEmpty, ticketTime, setTicketTime }) => {
+import QrGenerator from '../qrGenerator/QrGenerator'
+const Ticket = ({ setIsEmpty, ticketTime, setTicketTime, setIsClicked }) => {
   const { hours, minutes, seconds } = ticketTime
   const [month, setMonth] = useState('')
   const [day, setDay] = useState('')
@@ -43,7 +44,7 @@ const Ticket = ({ setIsEmpty, ticketTime, setTicketTime }) => {
     }
   }, [ticketTime])
 
-  // Ger dig nästkommande månad i form av en sträng t.ex "maj"
+  // Ger dig nästkommande dag i form av en sträng t.ex "15"
   const getNextDay = () => {
     const day = new Date()
     day.setDate(day.getDate() + 30)
@@ -60,15 +61,11 @@ const Ticket = ({ setIsEmpty, ticketTime, setTicketTime }) => {
     let nextMonth = new Intl.DateTimeFormat('sv-SE', options).format(month)
     console.log(nextMonth)
     return nextMonth
-
-    // const options = { month: 'long' }
-    // const monthString = new Intl.DateTimeFormat('sv-SE', options).format(month)
-    // console.log(monthString)
-    // return monthString
   }
 
   return (
     <div className='bought-ticket-area'>
+      <QrGenerator />
       {/* Enkel Biljett */}
       {ticketTime.type === 'single' && (
         <div className='ticket-info'>
@@ -108,7 +105,10 @@ const Ticket = ({ setIsEmpty, ticketTime, setTicketTime }) => {
         <button className='bike-link' href='!#'>
           Reservera cykel
         </button>
-        <button className='ticket-links-show_btn' href='!#'>
+        <button
+          className='ticket-links-show_btn'
+          onClick={() => setIsClicked((isClicked) => !isClicked)}
+        >
           Visa biljett <img src={qr} alt='Qr-symbol' />
         </button>
       </div>

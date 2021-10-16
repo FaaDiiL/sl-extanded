@@ -1,7 +1,13 @@
 import React from 'react'
 import './style.css'
 import Ticket from '../ticket/Ticket'
-const YourTickets = ({ ticketTime, setTicketTime, isEmpty, setIsEmpty }) => {
+const YourTickets = ({
+  ticketTime,
+  setTicketTime,
+  isEmpty,
+  setIsEmpty,
+  setIsClicked,
+}) => {
   return (
     <section id='dina-biljetter'>
       <div id='margin-reset' className='blue-line' />
@@ -21,6 +27,7 @@ const YourTickets = ({ ticketTime, setTicketTime, isEmpty, setIsEmpty }) => {
             setIsEmpty={setIsEmpty}
             ticketTime={ticketTime}
             setTicketTime={setTicketTime}
+            setIsClicked={setIsClicked}
           />
         )}
       </div>
