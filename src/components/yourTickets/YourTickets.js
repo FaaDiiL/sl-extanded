@@ -19,9 +19,6 @@ const YourTickets = ({
         >
           Inga biljetter!
         </p>
-        {/* 
-            // todo Add the Bought tickets.....
-        */}
         {!isEmpty && (
           <Ticket
             setIsEmpty={setIsEmpty}
