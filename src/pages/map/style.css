@@ -87,3 +87,8 @@ button {
   margin-top: -17px;
   width: 340px;
 }
+
+.mapboxgl-ctrl-bottom-left,
+mapboxgl-ctrl-bottom-right {
+  display: none;
+}
