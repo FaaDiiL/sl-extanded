@@ -10,6 +10,7 @@ import Header from './components/header/Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
+import Map from './pages/map/Map'
 function App() {
   const [ticketTime, setTicketTime] = useState({})
   return (
@@ -27,6 +28,9 @@ function App() {
             <Header />
             <Footer />
           </div>
+        </Route>
+        <Route path='/map'>
+          <Map />
         </Route>
       </Switch>
     </Router>
