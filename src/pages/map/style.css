@@ -87,8 +87,92 @@ button {
   margin-top: -17px;
   width: 340px;
 }
+.button-active {
+  padding: 15px;
+  color: #fff;
+  font-family: slRegular;
+  letter-spacing: 0.015px;
+  font-size: 18px;
+  background: #2970f0;
+  border: none;
+  border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -ms-border-radius: 0.8em;
+  -o-border-radius: 0.8em;
+  margin-top: -17px;
+  width: 340px;
+}
+.button-disabled {
+  background: #93a8cf;
+  color: #000;
+}
 
 .mapboxgl-ctrl-bottom-left,
 mapboxgl-ctrl-bottom-right {
+  display: '';
+}
+
+.popup {
+  z-index: 99;
+  position: absolute;
+  top: -80px;
+  left: -45px;
+  padding: 0.3em 1.5em;
+  min-width: 150px;
+  background-color: white;
+  color: black;
+  border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+}
+
+/* Modal - Start*/
+.modal-container {
+  z-index: 9999;
+  position: absolute;
+  top: -50px;
+  left: -120px;
+  display: flex;
+  margin: auto;
+  width: 250px;
+  min-height: 150px;
+  background: #000;
+}
+.modal-center {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background: #4c5157;
+  padding: 0 25px;
+  margin: auto;
+}
+.modal-item-container {
+  display: flex;
+  justify-content: space;
+  align-items: center;
+}
+.modal-item-container img {
+  width: 30px;
+  height: 30px;
+  margin: 0 25px;
+}
+/* Modal - End */
+
+/* Removing default infoWindow Google Maps - Start*/
+.gm-ui-hover-effect {
+  display: none !important;
+}
+.gm-style .gm-style-iw-t::after {
+  display: none;
+}
+.gm-style-iw.gm-style-iw-c {
+  padding: 0;
+  display: none;
+}
+/* Removing default infoWindow Google Maps - End */
+.hide {
   display: none;
 }

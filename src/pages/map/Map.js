@@ -3,35 +3,21 @@ import './style.css'
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
 import bike from '../../assets/img/bike-icon.svg'
-import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import available from '../../assets/img/available.png'
 import unAvailable from '../../assets/img/unAvailable.png'
 import current from '../../assets/img/current.png'
-
-// app.js
-import 'mapbox-gl/dist/mapbox-gl.css'
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from 'react-google-maps'
+import MyMap from './MyMap'
 
 const Map = () => {
-  ReactMapGL.accessToken =
-    'pk.eyJ1IjoiZmFkaWxtYXAiLCJhIjoiY2t1dWU5OGp3MWtvbzJvcXZybzlpNXFhcSJ9.893BxZCnUJJSSZPa475ibA'
-
-  const mapContainer = useRef(null)
-  const map = useRef(null)
-  const [lng, setLng] = useState(18.07329006284052)
-  const [lat, setLat] = useState(59.32048135983436)
-  const [zoom, setZoom] = useState(13)
-  const [showPopup, togglePopup] = useState(false)
-  const [selectedBike, setSelectedBike] = useState(null)
-  const [viewport, setViewport] = useState({
-    width: 400,
-    height: 400,
-    latitude: 59.3195,
-    longitude: 18.0723,
-    zoom: 13.5,
-    width: '375px',
-    height: '550px',
-    pitch: 15,
-  })
+  const [id, setId] = useState(null)
+  const [address, setAddress] = useState(null)
+  // objects of locations...
   const availableBikes = {
     type: 'FeatureCollection',
     features: [
@@ -39,6 +25,7 @@ const Map = () => {
         type: 'Feature',
         properties: {
           id: 1,
+          address: 'Sankt Paulsgatan 4A, 118 46 Stockholm',
         },
         geometry: {
           type: 'Point',
@@ -49,6 +36,7 @@ const Map = () => {
         type: 'Feature',
         properties: {
           id: 2,
+          address: 'Hornsgatan, Stockholm',
         },
         geometry: {
           type: 'Point',
@@ -59,6 +47,7 @@ const Map = () => {
         type: 'Feature',
         properties: {
           id: 3,
+          address: 'Södermalmstorg, 116 46 Stockholm',
         },
         geometry: {
           type: 'Point',
@@ -69,6 +58,7 @@ const Map = () => {
         type: 'Feature',
         properties: {
           id: 4,
+          address: 'Katarinavägen 2 A, 116 45 Stockholm',
         },
         geometry: {
           type: 'Point',
@@ -79,6 +69,7 @@ const Map = () => {
         type: 'Feature',
         properties: {
           id: 5,
+          address: 'Skeppsbron 64, 111 30 Stockholm',
         },
         geometry: {
           type: 'Point',
@@ -209,65 +200,22 @@ const Map = () => {
       },
     ],
   }
-
+  useEffect(() => {
+    address !== null && console.log(address.split(',')[0])
+  }, [address])
   return (
     <div className='map-wrapper'>
       <div className='map-wrapper-header'>
         <Header />
       </div>
       <div className='map-content'>
-        <ReactMapGL
-          mapboxApiAccessToken='pk.eyJ1IjoiZmFkaWxtYXAiLCJhIjoiY2t1dWU5OGp3MWtvbzJvcXZybzlpNXFhcSJ9.893BxZCnUJJSSZPa475ibA'
-          {...viewport}
-          onViewportChange={(nextViewport) => setViewport(nextViewport)}
-        >
-          {availableBikes.features.map((bike, i) => (
-            <Marker
-              key={bike.properties.id}
-              latitude={bike.geometry.coordinates[1]}
-              longitude={bike.geometry.coordinates[0]}
-              offsetLeft={-20}
-              offsetTop={-10}
-            >
-              <img src={available} alt='de' />
-            </Marker>
-          ))}
-
-          {unAvailableBikes &&
-            unAvailableBikes.features.map((bike, i) => (
-              <div
-                onClick={(e) => {
-                  e.preventDefault()
-                  setSelectedBike(bike)
-                }}
-              >
-                <Marker
-                  key={bike.properties.id}
-                  latitude={bike.geometry.coordinates[1]}
-                  longitude={bike.geometry.coordinates[0]}
-                  offsetLeft={-20}
-                  offsetTop={-10}
-                >
-                  <img src={unAvailable} alt='de' />
-                </Marker>
-              </div>
-            ))}
-
-          {selectedBike ? (
-            <Popup
-              latitude={selectedBike.geometry.coordinates[1]}
-              longitude={selectedBike.geometry.coordinates[0]}
-              offsetLeft={0}
-              offsetTop={-15}
-            >
-              <div style={{ width: '90px' }}>
-                Bike is un available. Try to choose the black image.
-              </div>
-            </Popup>
-          ) : (
-            ''
-          )}
-        </ReactMapGL>
+        <MyMap
+          availableBikes={availableBikes}
+          unAvailableBikes={unAvailableBikes}
+          id={id}
+          setId={setId}
+          setAddress={setAddress}
+        />
       </div>
       <div className='info-container'>
         <div className='info-container-header'>
@@ -279,14 +227,21 @@ const Map = () => {
 
         <div className='info-container-body'>
           <p className='info-text-top'>
-            Ditt fordon är nu reserverat och finns på adressen: Södermalmstorg
+            {id !== null
+              ? 'Ditt fordon är nu reserverat och finns på adressen: '
+              : 'Välj en svart markerad cykel!'}
+            {address !== null && address.split(',')[0]}
             <span className='info-text-bottom'>
-              <span className='left'>116 46 Stockholm</span>
-              <span className='right'>ID: 123abc</span>
+              <span className='left'>
+                {address !== null && address.split(',')[1]}
+              </span>
+              {id !== null && <span className='right'> ID: {id}</span>}
             </span>
           </p>
         </div>
-        <button>Boka ditt färdmedel</button>
+        <button className={id !== null ? 'button-active' : 'hide'}>
+          Boka ditt färdmedel
+        </button>
       </div>
       <Footer />
     </div>
