@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import qr from '../../assets/img/Qr@2x.svg'
 import './style.css'
 import QrGenerator from '../qrGenerator/QrGenerator'
+import { Redirect, Link, useHistory } from 'react-router-dom'
 const Ticket = ({ setIsEmpty, ticketTime, setTicketTime, setIsClicked }) => {
+  let history = useHistory()
   const { hours, minutes, seconds } = ticketTime
   const [month, setMonth] = useState('')
   const [day, setDay] = useState('')
@@ -102,9 +104,10 @@ const Ticket = ({ setIsEmpty, ticketTime, setTicketTime, setIsClicked }) => {
       )}
 
       <div className='ticket-links'>
-        <button className='bike-link' href='!#'>
+        <button className='bike-link' onClick={() => history.push('/map')}>
           Reservera cykel
         </button>
+
         <button
           className='ticket-links-show_btn'
           onClick={() => setIsClicked((isClicked) => !isClicked)}

@@ -17,29 +17,32 @@ const Available = ({
   setAddress,
 }) => (
   <div
+    className='marker-wrapper'
     onClick={() => {
       setToggle(!toggle)
     }}
   >
-    <img
-      src={
-        !toggle & ((selected !== null) & (selected === id))
-          ? current
-          : available
-      }
-      alt='This bike is available!'
-      onClick={() => {
-        setSelected(bike.properties.id)
-        setId(bike.properties.id)
-        setAddress(bike.properties.address)
-      }}
-    />
-    {selected === id && (
-      <p ref={infoBox} className={toggle ? `hide` : `popup`}>
-        {text}
-      </p>
-    )}
-    {/* <img src={current} alt='This is the current bike!' /> */}
+    <div>
+      <img
+        src={
+          toggle & ((selected !== null) & (selected === id))
+            ? current
+            : available
+        }
+        alt='This bike is available!'
+        onClick={() => {
+          setSelected(bike.properties.id)
+          setId(bike.properties.id)
+          setAddress(bike.properties.address)
+        }}
+      />
+      {selected === id && (
+        <p ref={infoBox} className={toggle ? `popup` : `hide`}>
+          {text}
+        </p>
+      )}
+      {/* <img src={current} alt='This is the current bike!' /> */}
+    </div>
   </div>
 )
 

@@ -10,6 +10,7 @@
   color: #fff;
 }
 .map-content {
+  position: relative;
   overflow-y: scroll;
 }
 
@@ -115,9 +116,6 @@ mapboxgl-ctrl-bottom-right {
 
 .popup {
   z-index: 99;
-  position: absolute;
-  top: -80px;
-  left: -45px;
   padding: 0.3em 1.5em;
   min-width: 150px;
   background-color: white;
@@ -172,7 +170,85 @@ mapboxgl-ctrl-bottom-right {
   padding: 0;
   display: none;
 }
+
+.gm-style-cc {
+  display: none;
+}
+.box {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  width: 70px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(25px);
+  -webkit-filter: blur(25px);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.box::after {
+  content: 'FreeMap';
+  color: black;
+  font-size: 10px;
+}
 /* Removing default infoWindow Google Maps - End */
 .hide {
   display: none;
 }
+
+/* 
+    Bike Marker
+*/
+
+.marker-wrapper {
+  position: relative;
+  width: 33px;
+  height: 35px;
+}
+.marker-wrapper p.popup {
+  position: absolute;
+  top: -100px;
+  left: -50px;
+  z-index: 11100;
+  font-family: sl-regular;
+  color: black;
+  border: solid black 4px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+/* Map - Start */
+.danger {
+  background: red;
+  font-family: slBold;
+  letter-spacing: 1px;
+}
+/* Map - End */
+
+/* Style bike ticket - Start */
+
+.map-content-ticket {
+  height: 550px;
+  display: flex;
+}
+
+.ticket-wrapper {
+  margin: auto;
+  background: #197e50;
+  color: white;
+  height: 250px;
+  width: 95%;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+/* Style bike ticket - End */

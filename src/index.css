@@ -98,9 +98,6 @@
 
 /* Scroll Style Settings - End */
 
-* {
-  box-sizing: border-box;
-}
 .bold {
   font-family: 'slBold';
   font-weight: 800;

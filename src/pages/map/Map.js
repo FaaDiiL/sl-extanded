@@ -6,6 +6,7 @@ import bike from '../../assets/img/bike-icon.svg'
 import available from '../../assets/img/available.png'
 import unAvailable from '../../assets/img/unAvailable.png'
 import current from '../../assets/img/current.png'
+import { useRouteMatch, Route, useHistory } from 'react-router-dom'
 import {
   withScriptjs,
   withGoogleMap,
@@ -14,7 +15,11 @@ import {
 } from 'react-google-maps'
 import MyMap from './MyMap'
 
-const Map = () => {
+const Map = ({ ticketTime }) => {
+  const { hours, minutes, seconds } = ticketTime
+  let history = useHistory()
+  let { path, url } = useRouteMatch()
+
   const [id, setId] = useState(null)
   const [address, setAddress] = useState(null)
   // objects of locations...
@@ -208,41 +213,85 @@ const Map = () => {
       <div className='map-wrapper-header'>
         <Header />
       </div>
-      <div className='map-content'>
-        <MyMap
-          availableBikes={availableBikes}
-          unAvailableBikes={unAvailableBikes}
-          id={id}
-          setId={setId}
-          setAddress={setAddress}
-        />
-      </div>
-      <div className='info-container'>
-        <div className='info-container-header'>
-          <span className='bike-img'>
-            <img src={bike} alt='bike' />
-          </span>
-          <span className='info-title'> Cykel</span>
+      <Route exact path={`${path}`}>
+        <div className='map-content'>
+          <MyMap
+            availableBikes={availableBikes}
+            unAvailableBikes={unAvailableBikes}
+            id={id}
+            setId={setId}
+            setAddress={setAddress}
+          />
+          <div className='box'></div>
         </div>
-
-        <div className='info-container-body'>
-          <p className='info-text-top'>
-            {id !== null
-              ? 'Ditt fordon är nu reserverat och finns på adressen: '
-              : 'Välj en svart markerad cykel!'}
-            {address !== null && address.split(',')[0]}
-            <span className='info-text-bottom'>
-              <span className='left'>
-                {address !== null && address.split(',')[1]}
-              </span>
-              {id !== null && <span className='right'> ID: {id}</span>}
+        <div className='info-container'>
+          <div className='info-container-header'>
+            <span className='bike-img'>
+              <img src={bike} alt='bike' />
             </span>
-          </p>
+            <span className='info-title'> Cykel</span>
+          </div>
+
+          <div className='info-container-body'>
+            <p className='info-text-top'>
+              {id !== null
+                ? 'Ditt fordon är nu reserverat och finns på adressen: '
+                : 'Välj en svart markerad cykel!'}
+              {address !== null && address.split(',')[0]}
+              <span className='info-text-bottom'>
+                <span className='left'>
+                  {address !== null && address.split(',')[1]}
+                </span>
+                {id !== null && <span className='right'> ID: {id}</span>}
+              </span>
+            </p>
+          </div>
+          <button
+            className={id !== null ? 'button-active' : 'hide'}
+            onClick={() => history.push(`${url}/${id}`)}
+          >
+            Boka ditt färdmedel
+          </button>
         </div>
-        <button className={id !== null ? 'button-active' : 'hide'}>
-          Boka ditt färdmedel
-        </button>
-      </div>
+      </Route>
+
+      <Route exact path={`${path}/:id`}>
+        <div className='map-content-ticket'>
+          <div className='ticket-wrapper'>
+            <h2>
+              {hours}:{minutes}:{seconds}
+            </h2>
+          </div>
+        </div>
+        <div className='info-container'>
+          <div className='info-container-header'>
+            <span className='bike-img'>
+              <img src={bike} alt='bike' />
+            </span>
+            <span className='info-title'> Cykel</span>
+          </div>
+
+          <div className='info-container-body'>
+            <p className='info-text-top'>
+              {id !== null ? `Bike-ID: ${id}` : 'Välj en svart markerad cykel!'}
+              {address !== null && address.split(',')[0]}
+              <span className='info-text-bottom'>
+                <span className='left'>
+                  {address !== null && address.split(',')[1]}
+                </span>
+                {id !== null && <span className='right'> ID: {id}</span>}
+              </span>
+            </p>
+          </div>
+          <button
+            className={id !== null ? 'button-active danger' : 'hide'}
+            onClick={() => history.push(`/`)}
+          >
+            Avsluta cykelturen
+          </button>
+        </div>
+      </Route>
+
       <Footer />
     </div>
   )
