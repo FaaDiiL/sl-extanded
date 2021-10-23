@@ -16,6 +16,8 @@ function App() {
   const { hours, minutes, seconds } = ticketTime
   const [month, setMonth] = useState('')
   const [day, setDay] = useState('')
+
+  const [isEmpty, setIsEmpty] = useState(ticketTime.length > 0 ? false : true)
   useEffect(() => {
     if (ticketTime.type === 'single') {
       const interval = setInterval(() => {
@@ -77,7 +79,12 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <div className='wrapper flex-column space-between'>
-            <Home ticketTime={ticketTime} setTicketTime={setTicketTime} />
+            <Home
+              setIsEmpty={setIsEmpty}
+              isEmpty={isEmpty}
+              ticketTime={ticketTime}
+              setTicketTime={setTicketTime}
+            />
             <Footer />
           </div>
         </Route>

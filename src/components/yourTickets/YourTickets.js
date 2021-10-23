@@ -12,15 +12,13 @@ const YourTickets = ({
     <section id='dina-biljetter'>
       <div id='margin-reset' className='blue-line' />
       <h2>Dina biljetter</h2>
+
       <div className='card center'>
-        <p
-          className='no-tickets-text'
-          style={{ display: `${isEmpty ? '' : 'none'}` }}
-        >
-          Inga biljetter!
-        </p>
-        {!isEmpty && (
+        {isEmpty ? (
+          <p className='no-tickets-text'>Inga biljetter!</p>
+        ) : (
           <Ticket
+            isEmpty={isEmpty}
             setIsEmpty={setIsEmpty}
             ticketTime={ticketTime}
             setTicketTime={setTicketTime}

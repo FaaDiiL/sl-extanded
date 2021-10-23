@@ -4,8 +4,7 @@ import HandleTickets from '../../components/handleTickets/HandleTickets'
 import BuyNewTicket from '../../components/buyNewTicket/BuyNewTicket'
 import QrGenerator from '../../components/qrGenerator/QrGenerator'
 
-const Home = ({ ticketTime, setTicketTime }) => {
-  const [isEmpty, setIsEmpty] = useState(!ticketTime.length > 0 ? true : false)
+const Home = ({ ticketTime, setTicketTime, isEmpty, setIsEmpty }) => {
   const [isClicked, setIsClicked] = useState(false)
 
   const buyTicket = (type) => {
@@ -38,9 +37,12 @@ const Home = ({ ticketTime, setTicketTime }) => {
 
   return (
     <>
+      {/* Qr Code icon onClick- Start */}
       <div onClick={() => setIsClicked(false)}>
         <QrGenerator isClicked={isClicked} ticketTime={ticketTime} />
       </div>
+      {/* Qr Code icon onClick- Start */}
+
       <YourTickets
         isEmpty={isEmpty}
         setIsEmpty={setIsEmpty}

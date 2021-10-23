@@ -129,7 +129,7 @@ const MyMap = ({ setId, setAddress, availableBikes, unAvailableBikes }) => {
   // Marker customization - End
 
   return (
-    <div style={{ height: '550px', width: '375px' }}>
+    <div>
       <MapContainer center={center} zoom={zoom} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://sl-ext-app.surge.sh">Sl Map!</a>'
