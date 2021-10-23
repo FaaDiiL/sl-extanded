@@ -130,17 +130,56 @@ const MyMap = ({ setId, setAddress, availableBikes, unAvailableBikes }) => {
 
   return (
     <div style={{ height: '550px', width: '375px' }}>
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+      <MapContainer center={center} zoom={zoom} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://sl-ext-app.surge.sh">Sl Map!</a>'
-          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          url='https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmFkaWxtYXAiLCJhIjoiY2t1dWU5OGp3MWtvbzJvcXZybzlpNXFhcSJ9.893BxZCnUJJSSZPa475ibA'
         />
-        <Marker position={[51.505, -0.09]} icon={CurrentIcon}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        {unAvailableBikes.features.map((bike, i) => (
+          <Marker
+            position={[
+              bike.geometry.coordinates[1],
+              bike.geometry.coordinates[0],
+            ]}
+            icon={UnAvailableIcon}
+            id={bike.properties.id}
+            eventHandlers={{
+              click: (e) => {
+                console.log('marker clicked', e)
+                setSelected(null)
+              },
+            }}
+          >
+            <Popup>Cykeln är upptagen!</Popup>
+          </Marker>
+        ))}
+        {availableBikes.features.map((bike, i) => (
+          <Marker
+            position={[
+              bike.geometry.coordinates[1],
+              bike.geometry.coordinates[0],
+            ]}
+            icon={
+              toggle & (selected === bike.properties.id)
+                ? CurrentIcon
+                : AvailableIcon
+            }
+            id={bike.properties.id}
+            eventHandlers={{
+              click: (e) => {
+                console.log('marker clicked', e)
+                setSelected(bike.properties.id)
+                setToggle(!toggle)
+                setId(bike.properties.id)
+                setAddress(bike.properties.address)
+              },
+            }}
+          >
+            <Popup>{bike.properties.address}</Popup>
+          </Marker>
+        ))}
       </MapContainer>
+      <Modal modal={modal} />
       {/* <GoogleMapReact
         bootstrapURLKeys={{
           key: 'AIzaSyDu42441pY2D0uncLW5E799A5nBa1gV16A',

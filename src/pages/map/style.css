@@ -131,8 +131,8 @@ mapboxgl-ctrl-bottom-right {
 .modal-container {
   z-index: 9999;
   position: absolute;
-  top: -50px;
-  left: -120px;
+  top: 200px;
+  left: 65px;
   display: flex;
   margin: auto;
   width: 250px;

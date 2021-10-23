@@ -5,7 +5,7 @@ import BuyNewTicket from '../../components/buyNewTicket/BuyNewTicket'
 import QrGenerator from '../../components/qrGenerator/QrGenerator'
 
 const Home = ({ ticketTime, setTicketTime }) => {
-  const [isEmpty, setIsEmpty] = useState(ticketTime.length > 0 ? true : false)
+  const [isEmpty, setIsEmpty] = useState(!ticketTime.length > 0 ? true : false)
   const [isClicked, setIsClicked] = useState(false)
 
   const buyTicket = (type) => {
