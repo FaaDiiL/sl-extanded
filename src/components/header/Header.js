@@ -1,10 +1,12 @@
 import React from 'react'
 import arrow from '../../assets/img/Arrow-left.svg'
 import './style.css'
-
+import { useRouteMatch, Route, useHistory } from 'react-router-dom'
 const Header = () => {
+  const history = useHistory()
+
   return (
-    <header className='header-container'>
+    <header className='header-container' onClick={() => history.goBack()}>
       <img src={arrow} alt='left arrow' />
       <span className='regular'>Tillbaka</span>
     </header>
