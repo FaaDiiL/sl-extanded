@@ -147,6 +147,8 @@ const MyMap = ({ setId, setAddress, availableBikes, unAvailableBikes }) => {
               click: (e) => {
                 console.log('marker clicked', e)
                 setSelected(null)
+                setId(null)
+                setAddress(null)
               },
             }}
           >
