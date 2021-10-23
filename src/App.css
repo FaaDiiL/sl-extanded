@@ -22,3 +22,7 @@
 .space-between {
   justify-content: space-between;
 }
+.leaflet-container {
+  width: 365px;
+  height: 550px;
+}

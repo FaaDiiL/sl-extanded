@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react'
 
 import GoogleMapReact from 'google-map-react'
-import available from '../../assets/img/available.png'
-import unAvailable from '../../assets/img/unAvailable.png'
-import current from '../../assets/img/current.png'
+import available from '../../assets/img/Available.svg'
+import unAvailable from '../../assets/img/Unavailable.svg'
+import current from '../../assets/img/Current.svg'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import L from 'leaflet'
 const Available = ({
   text,
   id,
@@ -88,9 +90,58 @@ const MyMap = ({ setId, setAddress, availableBikes, unAvailableBikes }) => {
   const [zoom, setZoom] = useState(14.5)
   const [selected, setSelected] = useState(null)
   const [toggle, setToggle] = useState(false)
+
+  // Marker customization - Start
+
+  const AvailableIcon = L.icon({
+    iconUrl: available,
+    iconRetinaUrl: available,
+    iconAnchorUrl: null,
+    shadowUrl: null,
+    shadowSize: null,
+    shadowAnchor: null,
+    iconSize: [35, 33],
+    className: 'leaflet-venue-icon',
+  })
+
+  const UnAvailableIcon = L.icon({
+    iconUrl: unAvailable,
+    iconRetinaUrl: unAvailable,
+    iconAnchorUrl: null,
+    shadowUrl: null,
+    shadowSize: null,
+    shadowAnchor: null,
+    iconSize: [35, 33],
+    className: 'leaflet-venue-icon',
+  })
+
+  const CurrentIcon = L.icon({
+    iconUrl: current,
+    iconRetinaUrl: current,
+    iconAnchorUrl: null,
+    shadowUrl: null,
+    shadowSize: null,
+    shadowAnchor: null,
+    iconSize: [35, 33],
+    className: 'leaflet-venue-icon',
+  })
+
+  // Marker customization - End
+
   return (
     <div style={{ height: '550px', width: '375px' }}>
-      <GoogleMapReact
+      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+        <TileLayer
+          attribution='&copy; <a href="http://sl-ext-app.surge.sh">Sl Map!</a>'
+          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        />
+        <Marker position={[51.505, -0.09]} icon={CurrentIcon}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      </MapContainer>
+      {/* <GoogleMapReact
         bootstrapURLKeys={{
           key: 'AIzaSyDu42441pY2D0uncLW5E799A5nBa1gV16A',
         }}
@@ -126,7 +177,7 @@ const MyMap = ({ setId, setAddress, availableBikes, unAvailableBikes }) => {
           />
         ))}
         <Modal modal={modal} />
-      </GoogleMapReact>
+      </GoogleMapReact> */}
     </div>
   )
 }

@@ -252,3 +252,9 @@ mapboxgl-ctrl-bottom-right {
 }
 
 /* Style bike ticket - End */
+.leaflet-control-attribution a:first-child {
+  display: none;
+}
+.leaflet-control-attribution::before {
+  content: 'Map created by';
+}

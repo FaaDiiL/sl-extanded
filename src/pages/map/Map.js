@@ -3,9 +3,6 @@ import './style.css'
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
 import bike from '../../assets/img/bike-icon.svg'
-import available from '../../assets/img/available.png'
-import unAvailable from '../../assets/img/unAvailable.png'
-import current from '../../assets/img/current.png'
 import { useRouteMatch, Route, useHistory } from 'react-router-dom'
 import {
   withScriptjs,
