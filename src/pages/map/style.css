@@ -239,6 +239,8 @@ mapboxgl-ctrl-bottom-right {
 }
 
 .ticket-wrapper {
+  display: flex;
+
   margin: auto;
   background: #197e50;
   color: white;
@@ -250,7 +252,17 @@ mapboxgl-ctrl-bottom-right {
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
 }
-
+.center-text {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.ticket-wrapper h2 {
+  font-size: 5em;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
 /* Style bike ticket - End */
 .leaflet-control-attribution a:first-child {
   display: none;

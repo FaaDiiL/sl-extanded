@@ -38,10 +38,7 @@ const Home = ({ ticketTime, setTicketTime }) => {
 
   return (
     <>
-      <div
-        style={{ display: isClicked ? '' : 'none' }}
-        onClick={() => setIsClicked(false)}
-      >
+      <div onClick={() => setIsClicked(false)}>
         <QrGenerator isClicked={isClicked} ticketTime={ticketTime} />
       </div>
       <YourTickets

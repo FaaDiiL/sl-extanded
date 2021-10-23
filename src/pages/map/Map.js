@@ -255,9 +255,12 @@ const Map = ({ ticketTime }) => {
       <Route exact path={`${path}/:id`}>
         <div className='map-content-ticket'>
           <div className='ticket-wrapper'>
-            <h2>
-              {hours}:{minutes}:{seconds}
-            </h2>
+            <div className='center-text'>
+              <h2>Tid kvar</h2>
+              <h2>
+                {hours}:{minutes}:{seconds}
+              </h2>
+            </div>
           </div>
         </div>
         <div className='info-container'>
@@ -270,13 +273,26 @@ const Map = ({ ticketTime }) => {
 
           <div className='info-container-body'>
             <p className='info-text-top'>
-              {id !== null ? `Bike-ID: ${id}` : 'Välj en svart markerad cykel!'}
+              {id !== null ? (
+                <span style={{ fontFamily: 'slBold', color: 'white' }}>
+                  Cykel info:{' '}
+                </span>
+              ) : (
+                'Välj en svart markerad cykel!'
+              )}
               {address !== null && address.split(',')[0]}
               <span className='info-text-bottom'>
                 <span className='left'>
                   {address !== null && address.split(',')[1]}
                 </span>
-                {id !== null && <span className='right'> ID: {id}</span>}
+                {id !== null && (
+                  <span className='right'>
+                    <span style={{ fontFamily: 'slBold', color: 'white' }}>
+                      ID:{' '}
+                    </span>
+                    {id}
+                  </span>
+                )}
               </span>
             </p>
           </div>
