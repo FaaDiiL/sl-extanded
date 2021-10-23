@@ -205,10 +205,10 @@ const Map = ({ ticketTime }) => {
 
   return (
     <div className='map-wrapper'>
+      <div className='map-wrapper-header'>
+        <Header />
+      </div>
       <Route exact path={`${path}`}>
-        <div className='map-wrapper-header'>
-          <Header url={url} />
-        </div>
         <div className='map-content'>
           <MyMap
             availableBikes={availableBikes}
@@ -251,9 +251,6 @@ const Map = ({ ticketTime }) => {
       </Route>
 
       <Route exact path={`${path}/:id`}>
-        <div className='map-wrapper-header'>
-          <Header url={url} />
-        </div>
         <div className='map-content-ticket'>
           <div className='ticket-wrapper'>
             <div className='center-text'>

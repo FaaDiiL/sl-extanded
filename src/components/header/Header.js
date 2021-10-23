@@ -1,7 +1,7 @@
 import React from 'react'
 import arrow from '../../assets/img/Arrow-left.svg'
 import './style.css'
-import { useRouteMatch, Route, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 const Header = () => {
   const history = useHistory()
 
